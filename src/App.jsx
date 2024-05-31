@@ -3,17 +3,20 @@ import {fetchDataFromAPI} from "./ultis/api.js"
 import './App.css'
 
 function App() {
+  const [counter, setCounter] = useState(0);
+
+  const increment = () => {
+    setCounter((preCounter) => preCounter + 1);
+  }
+
   useEffect(() => {
-    console.log("start")
     apiTesting();
-    console.log("end")
   }, [])
 
   const apiTesting = async () => {
     try {
-      
-      console.log("API TEST")
       const data = await fetchDataFromAPI("/search/movie?query=Batman")
+      console.log(data);
     } catch (error) {
       console.error("Error fetching data: ", error);
     }
