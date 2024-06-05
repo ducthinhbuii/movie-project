@@ -1,12 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useSelector} from 'react-redux'
 import './styles.scss'
+import useFetch from '../../../hooks/useFetch'
+import { getApiConfigSelector } from '../../../redux/selector'
+import { Img } from '../../../components/lazyLoadImages/Img'
+import { ContentWrapper } from '../../../components/contentWrapper/ContentWrapper'
 
 export const HeroBanner = () => {
-    const [backGround, setBackGround] = useState('')
+    const [background, setBackGround] = useState('')
     const [query, setQuery] = useState('')
+    const url = useSelector(getApiConfigSelector)
     const navigate = useNavigate()
+    const {data, isLoading} = useFetch("/movie/upcoming")
+
+    useEffect(() => {
+        const bg = url.backdrop + data?.results[Math.floor(Math.random() * 20)]?.backdrop_path
+        setBackGround(bg)
+    }, [data])
 
     const handleSearch = (e) => {
         if(e.key === 'Enter' && query.length > 0 ){
@@ -22,7 +34,11 @@ export const HeroBanner = () => {
 
     return (
         <div className='heroBanner'>
-            <div className="wrapp">
+            { !isLoading && <div className="backdrop-img">
+                <Img src={background} />
+            </div>}
+            <div className="overlay"></div>
+            <ContentWrapper>
                 <div className="heroBannerContext">
                     <div className="title">
                         Welcome
@@ -38,7 +54,7 @@ export const HeroBanner = () => {
                         <button onClick={handleButtonSearch}>Search</button>
                     </div>
                 </div>
-            </div>
+            </ContentWrapper>
         </div>
     )
 }

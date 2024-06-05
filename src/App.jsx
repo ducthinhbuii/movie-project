@@ -17,7 +17,6 @@ import { Footer } from './components/footer/Footer.jsx';
 function App() {
   const dispatch = useDispatch()
   const url = useSelector(getApiConfigSelector)
-  console.log(url)
 
   useEffect(() => {
     apiTesting();
@@ -25,9 +24,15 @@ function App() {
 
   const apiTesting = async () => {
     try {
-      const data = await fetchDataFromAPI("/movie/popular")
-      // console.log(data)
-      dispatch(getApiConfiguration(data))
+      const data = await fetchDataFromAPI("/configuration")
+      
+      const url = {
+        backdrop: data.images.secure_base_url + "original",
+        poster: data.images.secure_base_url + "original",
+        profile: data.images.secure_base_url + "original",
+      }
+
+      dispatch(getApiConfiguration(url))
     } catch (error) {
       console.error("Error fetching data: ", error);
     }

@@ -1,0 +1,45 @@
+.footer{
+    color: white;
+    ul {
+        list-style: none;
+    }
+    padding: 26px 0;
+    background-color: black;
+    .more-info{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 14px;
+        font-size: 16px;
+        font-weight: 600;
+        .info{
+            margin: 8px;
+            &:hover {
+                color: var(--pink);
+            }
+            cursor: pointer;
+            gap: 15px;
+        }
+    }
+    .description{
+        padding: 0 30px;
+        text-align: center;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .social-media{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 36px;
+        .item{
+            margin: 0 30px;
+            font-size: 18px;
+            &:hover {
+                box-shadow: 0 0 0.625em var(--pink);
+                color: var(--pink);
+            }
+            cursor: pointer;
+        }
+    }
+}

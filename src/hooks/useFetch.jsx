@@ -6,7 +6,11 @@ const useFetch = (url) => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    useFetch(async () => {
+    useEffect(() => {
+        fetchData()
+    }, [url])
+
+    async function fetchData(){
         setIsLoading(true);
         setData(null);
         setError(null);
@@ -18,8 +22,7 @@ const useFetch = (url) => {
             setIsLoading(false)
             setError("Error");
         }
-        
-    }, [url])
+    }
 
     return {data, isLoading, error}
 }
