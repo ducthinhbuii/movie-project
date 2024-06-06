@@ -10,12 +10,12 @@ const homeReducer = (state = initState, action) => {
     switch (action.type) {
         case 'home/getApiConfiguration':
             return {
-                ...state,
+                ...state.home,
                 url: action.payload
             }
         case 'home/getGenres':
             return {
-                ...state,
+                ...state.home,
                 genres: action.payload
             }
         default:

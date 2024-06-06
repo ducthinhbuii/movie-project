@@ -8,7 +8,6 @@ import useFetch from '../../../hooks/useFetch'
 export const Trending = () => {
   const [endpoint, setEndpoint] = useState("day")
   const {data, isLoading} = useFetch(`/trending/all/${endpoint}`)
-  console.log({data, isLoading})
 
   const onTabChange = (value, index) => {
     setEndpoint(value === 'Day' ? 'day' : 'week')

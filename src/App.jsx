@@ -3,7 +3,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import {fetchDataFromAPI} from "./ultis/api.js"
 import './App.css'
 import {useSelector, useDispatch } from 'react-redux';
-import { getApiConfiguration } from './redux/actions.js';
+import { getApiConfiguration, getGenres } from './redux/actions.js';
 import { getApiConfigSelector } from './redux/selector.js';
 
 import { Home } from './pages/home/Home.jsx';
@@ -20,6 +20,7 @@ function App() {
 
   useEffect(() => {
     apiTesting();
+    genresCall();
   }, [])
 
   const apiTesting = async () => {
@@ -36,6 +37,25 @@ function App() {
     } catch (error) {
       console.error("Error fetching data: ", error);
     }
+  }
+
+  const genresCall = async () => {
+    const promises = []
+    const endPoints = ["tv", "movie"]
+    const allGenres = {}
+
+    for (const url of endPoints) {
+      const data = await fetchDataFromAPI(`/genre/${url}/list`);
+      promises.push(data); // Lấy mảng genres từ data
+    }
+    // console.log(promises)
+
+    promises.map(({genres}) => {
+      return genres.map((item) => (allGenres[item.id] = item));
+    })  
+
+    dispatch(getGenres(allGenres))
+  
   }
 
   return (
