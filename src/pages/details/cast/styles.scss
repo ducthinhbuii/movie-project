@@ -1,0 +1,64 @@
+@import '../../../mixins.scss';
+
+.castSection{
+    .contentWrapper{
+        display: inline-block;
+        .sectionHeading{
+            font-size: 24px;
+            color: white;
+            text-align: left;
+            margin-bottom: 25px;
+        }
+        .listCasts{
+            display: flex;
+            gap: 20px;
+            overflow-y: hidden;
+            margin-right: -20px;
+            margin-left: -20px;
+            padding: 0 20px;
+            .listCast{
+                color: white;
+                .profileImg{
+                    width: 125px;
+                    height: 125px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin-bottom: 15px;
+                    @include md {
+                        width: 175px;
+                        height: 175px;
+                        margin-bottom: 25px;
+                    }
+                    .lazy-load-image-background{
+                        width: 100%;
+                        height: 100%;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                    }
+                }
+                .profileName{
+                    font-size: 14px;
+                    line-height: 20px;
+                    font-weight: 600;
+                    @include md {
+                        font-size: 18px;
+                        line-height: 24px;
+                    }   
+                }
+                .profileCharacter{
+                    font-size: 14px;
+                    line-height: 20px;
+                    opacity: 0.5;
+                    @include md {
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+    }
+}

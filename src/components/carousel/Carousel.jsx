@@ -13,7 +13,7 @@ import dayjs from 'dayjs';
 import CircleRating from '../circleRating/CircleRating';
 import { Genres } from '../genres/Genres';
 
-export const Carousel = ({data, isLoading, endpoint}) => {
+export const Carousel = ({title, data, isLoading, endpoint}) => {
     const carouselContainer = useRef();
     const url = useSelector(getApiConfigSelector)
     const navigate = useNavigate()
@@ -35,6 +35,9 @@ export const Carousel = ({data, isLoading, endpoint}) => {
     return (
         <div className='carousel'>
             <ContentWrapper>
+                {title && 
+                    <div className="carouselTitle">{title}</div>
+                }
                 <BsFillArrowLeftCircleFill
                     className="carouselLeftNav arrow"
                     onClick={() => navigation("left")}

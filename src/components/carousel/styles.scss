@@ -3,6 +3,14 @@
 .carousel{
     .contentWrapper {
         position: relative;
+        display: inline-block;
+    }
+    .carouselTitle{
+        text-align: left;
+        font-size: 24px;
+        color: white;
+        margin-bottom: 25px;
+        
     }
     .arrow {
         font-size: 30px;
