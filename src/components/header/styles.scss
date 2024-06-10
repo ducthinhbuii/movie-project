@@ -1,9 +1,9 @@
 @import "../../mixins.scss";
 
 .header{
-    align-items: center;
-    display: flex;
-    justify-content: center;
+    // align-items: center;
+    // display: flex;
+    // justify-content: center;
     position: fixed;
     z-index: 1;
     width: 100%;
@@ -54,6 +54,12 @@
             }
         }
     }
+    .contentWrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
     
 }
 
@@ -63,12 +69,7 @@
     background-color: var(--black3);
 }
 
-.contentWrapper{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0
-}
+
 
 .logo-main{
     padding: 10px 24px;
