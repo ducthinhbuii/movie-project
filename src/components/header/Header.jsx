@@ -75,7 +75,9 @@ export const Header = () => {
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:3984267604.
     <header className={`header ${mobileMenu ? 'active-sidebar' : 'hide-sidebar'} ${show}`}>
         <ContentWrapper>
-            <div className="logo-main">
+            <div className="logo-main" onClick={() => {
+              navigate('/')
+            }}>
               <img src="https://raw.githubusercontent.com/ShariqAnsari88/movix/d68e3a79331705bc5cf7da9bc120c484116601e1/src/assets/movix-logo.svg"
                alt="Logo" />
             </div>

@@ -1,0 +1,56 @@
+@import '../../mixins.scss';
+
+.searchResultPages {
+    min-height: 700px;
+    padding-top: 100px;
+    color: white;
+    .contentWrapper{
+        display: inline-block;
+        .pageTitle{
+            text-align: left;
+            font-size: 24px;
+            line-height: 34px;
+            color: white;
+            margin-bottom: 25px;
+        }
+        .pageNotFound{
+            font-size: 24px;
+            color: white;
+        }
+        .movieList{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            flex-flow: row wrap;
+            gap: 10px;
+            margin-bottom: 50px;
+            @include md {
+                gap: 20px;
+            }
+        }
+        .pagination {
+            display: inline-block;
+            padding: 18px;
+            .actived{
+                background-color: #007bff;
+                &:hover{
+                    color: black;
+                }
+            }
+            .disabled{
+                opacity: 0.2;
+            }
+        }
+          
+        .pagination a {
+        color: white;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+            &:hover{
+                color: #007bff;
+            }
+        }
+    }
+}

@@ -71,7 +71,10 @@
 }
 
 .logo-main{
-    padding: 10px 24px
+    padding: 10px 24px;
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 .menu-item{
