@@ -4,7 +4,6 @@ import {useParams } from 'react-router-dom'
 import useFetch from '../../hooks/useFetch'
 import Spinner from '../../components/spinner/Sprinner'
 import {ContentWrapper} from '../../components/contentWrapper/ContentWrapper'
-import InfiniteScroll from 'react-infinite-scroll-component'
 import { MovieCard } from '../../components/movieCard/MovieCard'
 
 export const SearchResult = () => {

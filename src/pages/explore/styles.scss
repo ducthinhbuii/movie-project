@@ -1,0 +1,9 @@
+.searchResultPages{
+    .pageHeader{
+        display: flex;
+        justify-content: space-between;
+        .pageFilter{
+            margin-bottom: 25px;
+        }
+    }
+}

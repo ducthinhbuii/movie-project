@@ -1,0 +1,93 @@
+.selectContainer{
+    position: relative;
+    min-width: 220px;
+    height: 36px;
+    margin-bottom: 25px;
+    .select{
+        user-select: none;
+        background-color: #26355D;
+        padding: 4px 15px;
+        width: 100%;
+        color: white;
+        font-size: 16px;
+        border: 1px solid black;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .iconContainer{
+            border-left: 1px solid rgb(255, 255, 255, 0.7);
+            padding: 10px 15px 10px 8px;
+            height: 100%;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:hover{
+                opacity: 0.7;
+                cursor: pointer;
+            }
+        }
+        .selected{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            .item-select{
+                padding: 4px 8px;
+                margin-right: 2px;
+                background-color: black;
+                display: flex;
+                .item-select-text{
+                    margin-right: 2px;
+                }
+                .delete-icon{
+                    &:hover{
+                        opacity: 0.7;
+                        cursor: pointer;
+                    } 
+                }
+            }
+        }
+        .delete-all{
+            padding: 10px 15px 10px 8px;
+            height: 100%;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:hover{
+                opacity: 0.7;
+                cursor: pointer;
+            }
+        }
+    }
+    .menu{
+        background-color: white;
+        position: absolute;
+        left: 50%;
+        top: 146%;
+        border-radius: 6px;
+        overflow: hidden;
+        transform: translateX(-50%);
+        width: 100%;
+        z-index: 3;
+        opacity: 0;
+        display: none;
+        .option{
+            padding: 10px 12px;
+            color: black;
+            text-align: left;
+            cursor: pointer;
+            &:hover{
+                background-color: rgb(38, 53, 93, 0.5);
+                color: white;
+            }
+        }
+
+    }
+    .menu-open{
+        display: block;
+        opacity: 1;
+    }
+    
+}

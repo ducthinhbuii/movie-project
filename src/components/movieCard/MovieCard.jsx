@@ -8,7 +8,7 @@ import CircleRating from '../circleRating/CircleRating'
 import { Genres } from '../genres/Genres'
 import dayjs from 'dayjs'
 
-export const MovieCard = ({key, data, fromSearch}) => {
+export const MovieCard = ({key, data, fromSearch, endpoint}) => {
     const url = useSelector(getApiConfigSelector);
     const poster_url = data.poster_path ? url.poster + data.poster_path :
         'https://raw.githubusercontent.com/ShariqAnsari88/movix/main/src/assets/no-poster.png'
